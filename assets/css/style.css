@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: darkgrey;
+  
+}
+
+header {
+  height: 70px;
+  padding: 20px;
+  background-color: burlywood;
+  
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 40px;
+  color: darkslategray;
+  text-align: center;
+}
+
+.search-form {
+border: 5px solid darkslategray;
+min-height: 140px;
+padding: 5px 10px;
+}
+
+.search-form h2 {
+color: aqua;
+background-color: darkslateblue;
+padding: 15px;
+
+}
+
+.section {
+  display: flex;
+  height: calc(100vh - 70px);
+  padding: 20px;
+}
+
+.left-section {
+  background-color: darkgrey;
+
+  width: 30%;
+  height: 100%;
+}
+
+.right-section {
+  width: 70%;
+  height: 100%;
+  margin-left: 25px;
+}
+
+.form-label {
+  padding: 20px 0;
+  margin: 3px 0;
+  font-size: 25px;
+}
+
+.form-input {
+  display: block;
+  padding: 7px ;
+  width: 50%;
+  border: 2px solid black;
+  margin: 13px 0;
+  border-radius: 0.3rem;
+}
+
+.btn {
+width: 50%;
+padding: 7px;
+border: 2px solid black;
+color: darkslategray;
+border-radius: 0.3rem;
+}
+
+.city-info {
+  border: 5px solid darkslategray;
+  padding: 5px 10px;
+  height: calc(100% - 140px - 20px);
+  margin-top: 20px;
+}
+
+.things-to-do {
+  height: calc(50% - 10px);
+  border: 5px solid darkslategray;
+}
+
+.people-photos {
+  height: calc(50% - 10px);
+  border: 5px solid darkslategray;
+  margin-top: 20px;
+}
