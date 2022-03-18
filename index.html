@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vacation Vibes</title>
+  <script src="https://kit.fontawesome.com/eda41db93b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -13,35 +15,49 @@
   <header>
     <h1>Vacation Vibes</h1>
   </header>
+
   <section class="section">
     <div class="left-section">
       <div class="search-form">
         <form class="city-form">
           <label class="form-label" for="city">Search By City</label>
-          <input type="text" placeholder="City" class="form-input" name="city" id="">
-          <button class="btn">Search</button>
+          <input type="text" placeholder="Enter City Here" class="form-input input is-fullwidth" name="city" id="">
+          <button class="button is-fullwidth is-link">Search</button>
         </form>
       </div>
 
-      <div class="city-info">
+      <div class="city-info box has-background-primary-dark">
+
+        <div class="box has-text-white has-background-info-dark">
         <h2>City Info</h2>
-        <p>Population</p>
-        <p>Area</p>
+        <p class="city">This is where the user's city info goes</p>
+        </div>
+
+        <div class="box has-text-white has-background-info-dark">
+        <h2>Population</h2>
+        <p class="population">City's population count</p>
+        </div>
+
+        <div class="box has-text-white has-background-info-dark">
+        <h2>Area</h2>
+        <p class="area">dhsflkdhf</p>
+        </div>
+
       </div>
     </div>
 
     <div class="right-section">
-      <div class="things-to-do">
+      <div class="things-to-do box">
         <h2>Things To Do</h2>
       </div>
 
 
-      <div class="people-photos">
+      <div class="people-photos box">
         <h2>Instagram Photos</h2>
       </div>
     </div>
   </section>
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/vacation-vibes.js"></script>
 </body>
 
 </html>

@@ -12,7 +12,6 @@ body {
 
 header {
   height: 70px;
-  padding: 20px;
   background-color: burlywood;
   
 }
@@ -86,6 +85,7 @@ border-radius: 0.3rem;
   margin-top: 20px;
 }
 
+
 .things-to-do {
   height: calc(50% - 10px);
   border: 5px solid darkslategray;
@@ -95,4 +95,14 @@ border-radius: 0.3rem;
   height: calc(50% - 10px);
   border: 5px solid darkslategray;
   margin-top: 20px;
+}
+
+.box {
+  padding: 0;
+  text-align: center;
+  background-color: darkgray;
+}
+
+.box h2 {
+  text-decoration: underline;
 }
