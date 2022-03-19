@@ -10,12 +10,19 @@ var getBusinessName = function (event) {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
     if (cityName) {
-        var apiUrl = "https://api.yelp.com/v3/businesses/search?location=" + cityName;
-        fetch(apiUrl, { method: 'GET', mode: 'no-cors' }).then(function (response) {
-            return response.json();
-        }).then(function (response) {
-            console.log(response)
-        });
+        // var apiUrl = "https://api.yelp.com/v3/businesses/search?location=" + cityName;
+        fetch("http://api.yelp.com/v3/businesses/search?location=" + cityName,
+            { method: 'GET', mode: 'no-cors', Authorization: 'Bearer ZDUN7LV6xqnGDvgTOZH5mM5EZe5VQ1xD6JFQIHXn3Hc0jkxnu7QifI8o5wSILzhJHvnoKvU_P7Fxrhqsbk1WSbBiMeMGs0n_8Lst9Y9QKGT3kcYPuHOgX5okrT4xYnYx' })
+            .then(function (response) {
+                return response.json();
+            }).then(function (response) {
+                console.log(response)
+            });
+        // fetch(apiUrl, { method: 'GET', mode: 'no-cors' }).then(function (response) {
+        //     return response.json();
+        // }).then(function (response) {
+        //     console.log(response)
+        // });
 
     }
 };
