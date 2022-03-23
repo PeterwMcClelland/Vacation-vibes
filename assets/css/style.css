@@ -96,3 +96,15 @@ border-radius: 0.3rem;
   border: 5px solid darkslategray;
   margin-top: 20px;
 }
+
+.hide {
+    display: none;
+}
+
+.test {
+    overflow: auto;
+}
+
+.pictureSize {
+    width: 40%;
+}
