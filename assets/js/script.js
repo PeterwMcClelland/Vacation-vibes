@@ -3,10 +3,11 @@ let cityInputEl = document.querySelector("#cityName")
 let cityName;
 
 let submitHandler = function (event) {
+  event.preventDefault();
   cityName = cityInputEl.value
   if (cityName) {
     saveCity(cityName);
-    cityCoordinates(cityName);
+    cityInfo(cityName);
   }
 }
 
@@ -42,21 +43,41 @@ let updateSavedCities = function () {
 }
 updateSavedCities();
 
-// let cityCoordinates = function (cityName) {
-//   let apiUrl = 'https://wft-geo-db.p.rapidapi.com' + cityName + '&appid=2d908fc629msh2bb79c2d2cf6797p195b82jsnb2d824400456'
-//   fetch(apiUrl).then(function (response) {
-//     if (response.ok) {
-//       response.json().then(function (data) {
-//         console.log(data);
-//       })
-//     }
-//   })
-// }
+let cityInfo = function (cityName) {
+  let apiUrl = 'https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions?countryIds=US&namePrefix=' + cityName;
+  fetch(apiUrl, {
+    headers: {
+      'X-RapidAPI-Key': '2d908fc629msh2bb79c2d2cf6797p195b82jsnb2d824400456'
+    }
+  }).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        console.log(data);
+        cityUpdates(data.data[0]);
+      })
+    }
+  })
+}
 
+let cityUpdates = function (currentCity) {
+  let h1El = document.createElement("h1");
+  h1El.setAttribute("class", "city-info-heading")
+  h1El.textContent = cityName + ' ' + ' ' + "details"
+  let divEl = document.createElement("div");
+  divEl.setAttribute("class", "city-info-details")
+  let p1El = document.createElement("p");
+  p1El.textContent = "Country :" + currentCity.country
+  let p2El = document.createElement("p");
+  p2El.textContent = "Population :" + currentCity.population
+  let p3El = document.createElement("p");
+  p3El.textContent = "State :" + currentCity.region
+  divEl.appendChild(p1El);
+  divEl.appendChild(p2El);
+  divEl.appendChild(p3El);
+  let cityInformation = document.querySelector(".people-photos");
+  cityInformation.appendChild(h1El);
+  cityInformation.appendChild(divEl);
+}
 
-// cityFormEl.addEventListener("submit", submitHandler);
+cityFormEl.addEventListener("submit", submitHandler);
 
-// // fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions', options)
-// // 	.then(response => response.json())
-// // 	.then(response => console.log(response))
-// // 	.catch(err => console.error(err));
