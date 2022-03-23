@@ -1,103 +1,143 @@
-// https://cors-anywhere.herokuapp.com/  CORS link
-// API KEY FOR YELP ZDUN7LV6xqnGDvgTOZH5mM5EZe5VQ1xD6JFQIHXn3Hc0jkxnu7QifI8o5wSILzhJHvnoKvU_P7Fxrhqsbk1WSbBiMeMGs0n_8Lst9Y9QKGT3kcYPuHOgX5okrT4xYnYx
+// CORS LINK https://cors-anywhere.herokuapp.com/ 
+// API KEY FOR YELP 4ItWiTuukt5tY4_oKe6V7NNYkXmLtFn25s04ZpQSPNCdTR5Sk10SMsfuiUid3WkvwHRkqDy4TjNODHgIQlOSGeJomrpko6l02IhahFWkXUWcMPK8gW9K8v_XDj46YnYx
 // CLIENT ID XnayxhvasPdNSTF9OWEgiA
 
-var searchFormEl = document.getElementById("searchForm");
 var cityInputEl = document.getElementById("cityName");
-var cityName = cityInputEl.value.trim();
 
-var getBusinessName = function (event) {
-    event.preventDefault();
+var token = "Bearer 4ItWiTuukt5tY4_oKe6V7NNYkXmLtFn25s04ZpQSPNCdTR5Sk10SMsfuiUid3WkvwHRkqDy4TjNODHgIQlOSGeJomrpko6l02IhahFWkXUWcMPK8gW9K8v_XDj46YnYx";
+
+var apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search"
+
+var getBusinessesName = {
+    "url": apiUrl,
+    "data": { term: "restaurants", location: "" },
+    headers: { "Authorization": token },
+}
+
+// $(document).ready(function () {
+//     $("#submit").on("click",function(event) {
+//         event.preventDefault();
+document.getElementById("submit").addEventListener("click", function(e) {
+    e.preventDefault();
     var cityName = cityInputEl.value.trim();
-    if (cityName) {
-        // var apiUrl = "https://api.yelp.com/v3/businesses/search?location=" + cityName;
-        fetch("http://api.yelp.com/v3/businesses/search?location=" + cityName,
-            { method: 'GET', mode: 'no-cors', Authorization: 'Bearer ZDUN7LV6xqnGDvgTOZH5mM5EZe5VQ1xD6JFQIHXn3Hc0jkxnu7QifI8o5wSILzhJHvnoKvU_P7Fxrhqsbk1WSbBiMeMGs0n_8Lst9Y9QKGT3kcYPuHOgX5okrT4xYnYx' })
-            .then(function (response) {
-                return response.json();
-            }).then(function (response) {
-                console.log(response)
+        getBusinessesName.data.location = cityName;
+        $.ajax(getBusinessesName)
+            .done(function (response) {
+                console.log("typeof response = " + typeof response)
+                console.log("response = ", response)
+
+                document.getElementById("activity1Name").textContent = response.businesses[0].name;
+                document.getElementById("activity1Pic").setAttribute("src", response.businesses[0].image_url);
+                document.getElementById("activity1Address").textContent = response.businesses[0].location.address1;
+                document.getElementById("activity1Link").setAttribute("href", response.businesses[0].url);
+
+                document.getElementById("activity2Name").textContent = response.businesses[1].name;
+                document.getElementById("activity2Pic").setAttribute("src", response.businesses[1].image_url);
+                document.getElementById("activity2Address").textContent = response.businesses[1].location.address1;
+                document.getElementById("activity1Link").setAttribute("href", response.businesses[1].url);
+
+                document.getElementById("activity2Name").textContent = response.businesses[2].name;
+                document.getElementById("activity2Pic").setAttribute("src", response.businesses[2].image_url);
+                document.getElementById("activity2Address").textContent = response.businesses[2].location.address1;
+                document.getElementById("activity1Link").setAttribute("href", response.businesses[2].url);
             });
-        // fetch(apiUrl, { method: 'GET', mode: 'no-cors' }).then(function (response) {
-        //     return response.json();
-        // }).then(function (response) {
-        //     console.log(response)
-        // });
+        });
+    
+// });
 
-    }
-};
+// searchFormEl.addEventListener("submit", getBusinessName);
 
-    // $.ajax({
-    //     url: apiUrl,
-    //     method: "GET",
-    //     headers: {
-    //       "accept": "application/json",
-    //       "x-requested-with": "xmlhttprequest",
-    //       "Access-Control-Allow-Origin": "*",
-    //       "Authorization": `Bearer $ZDUN7LV6xqnGDvgTOZH5mM5EZe5VQ1xD6JFQIHXn3Hc0jkxnu7QifI8o5wSILzhJHvnoKvU_P7Fxrhqsbk1WSbBiMeMGs0n_8Lst9Y9QKGT3kcYPuHOgX5okrT4xYnYx`
-    //     },
-    //     data: {
-    //       location: cityName
-    //     }
-    //   })
 
-    // var getBusinessName = function (event) {
-    //     event.preventDefault();
-    //     console.log(event);
+// var getBusinessName = function (event) {
+//     event.preventDefault();
+//     var cityName = cityInputEl.value.trim();
+//     if (cityName) {
+//         fetch("https://travel-advisor.p.rapidapi.com/locations/search?query=" + cityInputEl + "&limit=10&offset=0&units=mi&location_id=1&currency=USD&sort=relevance&lang=en_US", {
+//             "method": "GET",
+//             "headers": {
+//                 "x-rapidapi-host": "travel-advisor.p.rapidapi.com",
+//                 "x-rapidapi-key": "dbb8ded846msh926033eb734afacp1bde62jsne144dbc578e0"
+//             }
+//         })
+//             .then(function (response) {
+//                 return response.json();
+//             })
+//             .then(function (response) {
+//                 console.log(response)
+//                 // document.getElementById("activity1").textContent = "First Activity: " + data.list[0];
+//             });
 
-    //     var cityName = cityInputEl.value.trim();
-    //     if (cityName) {
-    //         var apiUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + cityInputEl + "&appkey=ZDUN7LV6xqnGDvgTOZH5mM5EZe5VQ1xD6JFQIHXn3Hc0jkxnu7QifI8o5wSILzhJHvnoKvU_P7Fxrhqsbk1WSbBiMeMGs0n_8Lst9Y9QKGT3kcYPuHOgX5okrT4xYnYx";
-    //         // const response = await fetch(apiUrl, {method: 'GET', mode: 'no-cors'})    
-    //         fetch(apiUrlGeo).then(function (response) {
-    //             response.json().then(function (data) {
-    //                 console.log(data);
-    //                 // document.getElementById("dayOneUV").textContent = 
+// fetch("https://travel-advisor.p.rapidapi.com/attractions/list?location_id=298571&currency=USD&lang=en_US&lunit=mi&sort=recommended", {
+//     "method": "GET",
+//     "headers": {
+//         "x-rapidapi-host": "travel-advisor.p.rapidapi.com",
+//         "x-rapidapi-key": "dbb8ded846msh926033eb734afacp1bde62jsne144dbc578e0"
+//     }
+// })
+//     .then(response => {
+//         console.log(response);
+//     })
+//     .catch(err => {
+//         console.error(err);
+//     });
 
-    //             })
+// var getBusinessName = function (event) {
+//     event.preventDefault();
+//     var cityName = cityInputEl.value.trim();
+//     if (cityName) {
+//         //         fetch("https://yelpapiserg-osipchukv1.p.rapidapi.com/getBusinesses", {
+//         fetch("https://yelpapiserg-osipchukv1.p.rapidapi.com/getBusinesses", {
+//             "method": "POST",
+//             "headers": {
+//                 "content-type": "application/x-www-form-urlencoded",
+//                 "x-rapidapi-host": "YelpAPIserg-osipchukV1.p.rapidapi.com",
+//                 "x-rapidapi-key": "dbb8ded846msh926033eb734afacp1bde62jsne144dbc578e0"
+//             },
+//             "body": {
+//                 "locale": "cityInputEl",
+//                 "accessToken": "ZDUN7LV6xqnGDvgTOZH5mM5EZe5VQ1xD6JFQIHXn3Hc0jkxnu7QifI8o5wSILzhJHvnoKvU_P7Fxrhqsbk1WSbBiMeMGs0n_8Lst9Y9QKGT3kcYPuHOgX5okrT4xYnYx"
+//             }
+//         })
+//             .then(response => {
+//                 console.log(response);
+//             })
+//             .catch(err => {
+//                 console.error(err);
+//             })
+//     }        
+// };
 
-    //         })
-    //     }
-    // };
+        // $.ajax({
+        //     url: apiUrl,
+        //     method: "GET",
+        //     headers: {
+        //       "accept": "application/json",
+        //       "x-requested-with": "xmlhttprequest",
+        //       "Access-Control-Allow-Origin": "*",
+        //       "Authorization": `Bearer $ZDUN7LV6xqnGDvgTOZH5mM5EZe5VQ1xD6JFQIHXn3Hc0jkxnu7QifI8o5wSILzhJHvnoKvU_P7Fxrhqsbk1WSbBiMeMGs0n_8Lst9Y9QKGT3kcYPuHOgX5okrT4xYnYx`
+        //     },
+        //     data: {
+        //       location: cityName
+        //     }
+        //   })   https://api.yelp.com/v3/businesses/search  ?term= {} ?location= {}
 
-    // // var myurl = "https://api.yelp.com/v3/businesses/search?location=";
+        // var getBusinessName = function (event) {
+        //     event.preventDefault();
+        //     console.log(event);
 
-    // // $.ajax({
-    // //    url: myurl + cityInput,
-    // //    headers: {
-    // //     'Authorization':'Bearer ZDUN7LV6xqnGDvgTOZH5mM5EZe5VQ1xD6JFQIHXn3Hc0jkxnu7QifI8o5wSILzhJHvnoKvU_P7Fxrhqsbk1WSbBiMeMGs0n_8Lst9Y9QKGT3kcYPuHOgX5okrT4xYnYx',
-    // // },
-    // //    method: 'GET',
-    // //    dataType: 'json',
-    // //    success: function(data){
-    // //        // Grab the results from the API JSON return
-    // //        var totalresults = data.total;
-    // //        // If our results are greater than 0, continue
-    // //        if (totalresults > 0){
-    // //            // Display a header on the page with the number of results
-    // //            $('#results').append('<h5>We discovered ' + totalresults + ' results!</h5>');
-    // //            // Itirate through the JSON array of 'businesses' which was returned by the API
-    // //            $.each(data.businesses, function(i, item) {
-    // //                // Store each business's object in a variable
-    // //                var id = item.id;
-    // //                var alias = item.alias;
-    // //                var phone = item.display_phone;
-    // //                var image = item.image_url;
-    // //                var name = item.name;
-    // //                var rating = item.rating;
-    // //                var reviewcount = item.review_count;
-    // //                var address = item.location.address1;
-    // //                var city = item.location.city;
-    // //             //    var state = item.location.state;
-    // //             //    var zipcode = item.location.zip_code;
-    // //                // Append our result into our page
-    // //                $('#results').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + image + '" style="width:200px;height:150px;"><br>We found <b>' + name + '</b> (' + alias + ')<br>Business ID: ' + id + '<br> Located at: ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br>The phone number for this business is: ' + phone + '<br>This business has a rating of ' + rating + ' with ' + reviewcount + ' reviews.</div>');
-    // //          });
-    // //        } else {
-    // //            // If our results are 0; no businesses were returned by the JSON therefor we display on the page no results were found
-    // //            $('#results').append('<h5>We discovered no results!</h5>');
-    // //        }
-    // //    }
-    // // });     
+        //     var cityName = cityInputEl.value.trim();
+        //     if (cityName) {
+        //         var apiUrlGeo = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + cityInputEl;
+        //         // const response = await fetch(apiUrl, {method: 'GET', mode: 'no-cors', Authorization: "Bearer 4ItWiTuukt5tY4_oKe6V7NNYkXmLtFn25s04ZpQSPNCdTR5Sk10SMsfuiUid3WkvwHRkqDy4TjNODHgIQlOSGeJomrpko6l02IhahFWkXUWcMPK8gW9K8v_XDj46YnYx"})
+        //         fetch(apiUrlGeo).then(function (response) {
+        //             response.json().then(function (data) {
+        //                 console.log(data);
+    
 
-    searchFormEl.addEventListener("submit", getBusinessName);
+        //             })
+
+        //         })
+        //     }
+        // };
+
+        // btn.addEventListener("click", getBusinessName);
