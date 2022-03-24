@@ -3,6 +3,7 @@
 // CLIENT ID XnayxhvasPdNSTF9OWEgiA
 
 var cityInputEl = document.getElementById("cityName");
+var activites = document.getElementById("activites");
 
 var token = "Bearer 4ItWiTuukt5tY4_oKe6V7NNYkXmLtFn25s04ZpQSPNCdTR5Sk10SMsfuiUid3WkvwHRkqDy4TjNODHgIQlOSGeJomrpko6l02IhahFWkXUWcMPK8gW9K8v_XDj46YnYx";
 
@@ -22,7 +23,7 @@ document.getElementById("submit").addEventListener("click", function(e) {
             .done(function (response) {
                 console.log("typeof response = " + typeof response)
                 console.log("response = ", response)
-
+                activites.classList.remove("hide");
                 document.getElementById("activity1Name").textContent = response.businesses[0].name;
                 document.getElementById("activity1Pic").setAttribute("src", response.businesses[0].image_url);
                 document.getElementById("activity1Address").textContent = response.businesses[0].location.address1;

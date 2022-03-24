@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vacation Vibes</title>
+    <script src="https://kit.fontawesome.com/eda41db93b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -14,24 +16,24 @@
         <h1>Vacation Vibes</h1>
     </header>
     <section class="section">
+        <!-- Left-section starts which includes the city search input and button and the local-storage -->
         <div class="left-section">
             <div class="search-form">
-                <form id="searchForm" class="city-form">
+                <form class="city-form">
                     <label class="form-label" for="city">Search By City</label>
-                    <input type="text" placeholder="City" class="form-input" name="city" id="cityName">
-                    <button id="submit" class="btn">Search</button>
+                    <input type="text" placeholder="Enter City Here" class="form-input input is-fullwidth" name="city"
+                        id="cityName">
+                    <button id="submit" class="button is-fullwidth button is-info ">Search</button>
                 </form>
             </div>
-
             <div class="city-info">
-                <h2>City Info</h2>
-                <p>Population</p>
-                <p>Area</p>
+
             </div>
         </div>
-
+        <!-- Left-section ends -->
+        <!-- Right-section begins which includes the Api sections. -->
         <div class="right-section">
-            <div class="things-to-do">
+            <div class="things-to-do hide" id="activites">
                 <h2>Things To Do</h2>
                 <div class="test" id="activity1">
                     <h2 id="activity1Name">Name</h2>
@@ -58,13 +60,15 @@
                 </div>
             </div>
 
-
-            <div class="people-photos">
-                <h2>Instagram Photos</h2>
-            </div>
         </div>
+        <div class="people-photos">
+
+        </div>
+        </div>
+        <!-- Right-section ends -->
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./assets/js/script2.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
