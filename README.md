@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Vacation-vibes
 
 This app is for travelers that would like some more information about a city they are interested in visiting.  This uses Yelp API to look up restaurants to check out as well as using the GeoDB API to display city information such as population and the state that city is located in.  Bulma is being used for styling.
@@ -12,4 +10,3 @@ CSS
 JS
 Bulma
 jQuery
->>>>>>> f1d606d71baac760480a325227255219f3339890

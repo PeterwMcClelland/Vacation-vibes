@@ -44,7 +44,7 @@ let updateSavedCities = function () {
 updateSavedCities();
 
 let cityInfo = function (cityName) {
-  let apiUrl = 'https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions?countryIds=US&namePrefix=' + cityName;
+  let apiUrl = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities?location=30.266666-97.73&countryIds=us';
   fetch(apiUrl, {
     headers: {
       'X-RapidAPI-Key': '2d908fc629msh2bb79c2d2cf6797p195b82jsnb2d824400456'
