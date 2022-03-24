@@ -28,15 +28,18 @@ document.getElementById("submit").addEventListener("click", function (e) {
             document.getElementById("activity1Pic").setAttribute("src", response.businesses[0].image_url);
             document.getElementById("activity1Address").textContent = response.businesses[0].location.address1;
             document.getElementById("activity1Link").setAttribute("href", response.businesses[0].url);
+            document.getElementById("activity1Link").setAttribute("target", "_blank");
 
             document.getElementById("activity2Name").textContent = response.businesses[1].name;
             document.getElementById("activity2Pic").setAttribute("src", response.businesses[1].image_url);
             document.getElementById("activity2Address").textContent = response.businesses[1].location.address1;
             document.getElementById("activity2Link").setAttribute("href", response.businesses[1].url);
+            document.getElementById("activity2Link").setAttribute("target", "_blank");
 
             document.getElementById("activity3Name").textContent = response.businesses[2].name;
             document.getElementById("activity3Pic").setAttribute("src", response.businesses[2].image_url);
             document.getElementById("activity3Address").textContent = response.businesses[2].location.address1;
             document.getElementById("activity3Link").setAttribute("href", response.businesses[2].url);
+            document.getElementById("activity3Link").setAttribute("target", "_blank");
         });
 });
