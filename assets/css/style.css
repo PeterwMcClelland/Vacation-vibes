@@ -113,3 +113,15 @@ border-radius: 0.3rem;
   padding: 5px;
   margin: 4px;
 }
+
+.hide {
+    display: none;
+}
+
+.pictureSize {
+    width: 40%;
+}
+
+.test {
+    overflow: auto;
+}

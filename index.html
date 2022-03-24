@@ -23,7 +23,7 @@
           <label class="form-label" for="city">Search By City</label>
           <input type="text" placeholder="Enter City Here" class="form-input input is-fullwidth" name="city"
             id="cityName">
-          <button class="button is-fullwidth button is-info ">Search</button>
+          <button id="submit" class="button is-fullwidth button is-info ">Search</button>
         </form>
       </div>
       <div class="city-info">
@@ -33,15 +33,42 @@
     <!-- Left-section ends -->
     <!-- Right-section begins which includes the Api sections. -->
     <div class="right-section">
-      <div class="things-to-do">
+      <div class="things-to-do hide" id="activites">
+        <h2>Things To Do</h2>
+        <div class="test" id="activity1">
+          <h2 id="activity1Name">Name</h2>
+          <a id="activity1Link" href="URL">
+            <img class="pictureSize" id="activity1Pic" src="" alt="restaurant picture">
+          </a>
+          <p id="activity1Address">Address</p>
+        </div>
 
-      </div>
-      <div class="people-photos">
+        <div class="test" id="activity2">
+          <h2 id="activity2Name">Name</h2>
+          <a id="activity2Link" href="URL">
+            <img class="pictureSize" id="activity2Pic" src="" alt="restaurant picture">
+          </a>
+          <p id="activity2Address">Address</p>
+        </div>
 
+        <div class="test" id="activity3">
+          <h2 id="activity3Name">Name</h2>
+          <a id="activity3Link" href="URL">
+            <img class="pictureSize" id="activity3Pic" src="" alt="restaurant picture">
+          </a>
+          <p id="activity3Address">Address</p>
+        </div>
       </div>
+
+    </div>
+    <div class="people-photos">
+
+    </div>
     </div>
     <!-- Right-section ends -->
   </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./assets/js/script2.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 
