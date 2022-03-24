@@ -8,6 +8,9 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-image: url(../images/Image\ from\ iOS.jpg);
   background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 header {
@@ -52,6 +55,10 @@ padding: 15px;
   width: 70%;
   height: 100%;
   margin-left: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  overflow: auto;
 }
 
 .form-label {
@@ -80,18 +87,31 @@ border-radius: 0.3rem;
 .city-info {
   border: 5px solid darkslategray;
   padding: 5px 10px;
-  height: calc(100% - 140px - 20px);
+  height: 75%;
   margin-top: 20px;
 }
 
 .things-to-do {
   height: calc(50% - 10px);
-  
+}
+
+.things-to-do h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+}
+
+.things-to-do p {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: black;
 }
 
 .people-photos {
   height: calc(50% - 10px);
   margin-top: 20px;
+  background: rgb(61, 124, 202, .4);
+  height: 95%;
   
 }
 
@@ -119,12 +139,11 @@ border-radius: 0.3rem;
 }
 
 .pictureSize {
-    width: 40%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.test {
-    overflow: auto;
-}
+
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
@@ -150,7 +169,7 @@ border-radius: 0.3rem;
     float: right;
     margin-top: 0;
     height: 163.5px;
-    
+    overflow: auto;
   }
 
   .right-section {
@@ -159,13 +178,26 @@ border-radius: 0.3rem;
     height: 100%;
   }
 
+  .test {
+    font-size: xx-large;
+  }
+
   .things-to-do {
-    height: 260px;
+    height: 360px;
   }
 
   .people-photos {
-    height: 259px;
+    height: 159px;
   }
+
+  .city-info-heading {
+  }
+
+  .pictureSize {
+    width: 60%
+  }
+
+
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
