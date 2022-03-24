@@ -1,10 +1,10 @@
 let cityFormEl = document.querySelector(".city-form")
-let cityInputEl = document.querySelector("#cityName")
+let cityEl = document.querySelector("#cityName")
 let cityName;
 
 let submitHandler = function (event) {
   event.preventDefault();
-  cityName = cityInputEl.value
+  cityName = cityEl.value
   if (cityName) {
     saveCity(cityName);
     cityInfo(cityName);
