@@ -80,7 +80,7 @@ border-radius: 0.3rem;
 .city-info {
   border: 5px solid darkslategray;
   padding: 5px 10px;
-  height: calc(100% - 140px - 20px);
+  height: calc(100% - 163px - 20px);
   margin-top: 20px;
 }
 
@@ -100,5 +100,87 @@ border-radius: 0.3rem;
   margin-left: auto;
 }
 
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+  .section {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
 
+  .left-section {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-form {
+    width: 40%;
+    margin: 0;
+    display: inline-block;
+  }
+
+  .city-info {
+    width: 55%;
+    float: right;
+    margin-top: 0;
+    height: 163.5px;
+    
+  }
+
+  .right-section {
+    width: 100%;
+    margin-left: 0;
+    height: 100%;
+  }
+
+  .things-to-do {
+    height: 260px;
+  }
+
+  .people-photos {
+    height: 259px;
+  }
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+  header {
+    padding-top: 0;
+  }
+
+  header h1 {
+    font-size: 60px;
+  }
+
+  .search-form {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .form-label {
+    display: none;
+  }
+
+  .form-input {
+    font-size: larger; 
+  }
+
+  .button {
+    font-weight: bolder;
+  }
+
+  .city-info {
+    width: 100%;
+  }
+}
   
+@media screen and (max-width: 425px) {
+  header h1 {
+    font-size: 50px;
+  }
+}
