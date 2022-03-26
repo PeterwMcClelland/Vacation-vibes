@@ -14,17 +14,16 @@ body {
 }
 
 header {
-  height: 70px;
   padding: 20px;
-  
-  
 }
 
 header h1 {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 85px;
   color: darkslategray;
   text-align: center;
+  font-family: serif;
+  text-shadow: 5px 4px white;
 }
 
 .search-form {
@@ -63,7 +62,9 @@ padding: 15px;
 
 .right-section h2 {
   font-size: 28px;
+  font-weight: bold;
 }
+
 
 .form-label {
   padding: 20px 0;
@@ -96,13 +97,22 @@ border-radius: 0.3rem;
 }
 
 .things-to-do {
-  height: calc(70% - 10px);
+  /* height: calc(70% - 10px); */
   display: inline-flex; 
+  background: rgb(61, 124, 202, .4);
 }
 
-.things-to-do h2 {
+#activity1Name, #activity2Name, #activity3Name {
   color: white;
-  text-shadow: 2px 2px black;
+  font-size: 30px;
+  text-shadow: 3px 3px 3px black;
+}
+
+#activity1Address, #activity2Address, #activity3Address {
+  color: white;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px black;
+  font-weight: bold;
 }
 
 .people-photos {
@@ -234,5 +244,13 @@ border-radius: 0.3rem;
 
   .city-info {
     width: 100%;
+  }
+
+  .things-to-do {
+    display: block;
+  }
+
+  h2 {
+    text-align: center;
   }
 }

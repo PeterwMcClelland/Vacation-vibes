@@ -43,6 +43,7 @@ let updateSavedCities = function () {
 }
 updateSavedCities();
 
+
 let cityInfo = function (cityName) {
   let apiUrl = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities?location=30.266666-97.73&countryIds=us';
   fetch(apiUrl, {
@@ -66,11 +67,11 @@ let cityUpdates = function (currentCity) {
   let divEl = document.createElement("div");
   divEl.setAttribute("class", "city-info-details")
   let p1El = document.createElement("p");
-  p1El.textContent = "Country :" + currentCity.country
+  p1El.textContent = "Country : " + currentCity.country
   let p2El = document.createElement("p");
-  p2El.textContent = "Population :" + currentCity.population
+  p2El.textContent = "Population : " + currentCity.population
   let p3El = document.createElement("p");
-  p3El.textContent = "State :" + currentCity.region
+  p3El.textContent = "State : " + currentCity.region
   divEl.appendChild(p1El);
   divEl.appendChild(p2El);
   divEl.appendChild(p3El);
