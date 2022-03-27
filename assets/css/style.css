@@ -27,7 +27,6 @@ header h1 {
 }
 
 .search-form {
-border: 5px solid darkslategray;
 min-height: 140px;
 padding: 5px 10px;
 }
@@ -90,7 +89,6 @@ border-radius: 0.3rem;
 }
 
 .city-info {
-  border: 5px solid darkslategray;
   padding: 5px 10px;
   height: 75%;
   margin-top: 20px;
@@ -133,14 +131,18 @@ border-radius: 0.3rem;
   font-size: 42px;
   color: black;
   font-weight: bold;
+  color: white;
+  text-shadow: 3px 3px 3px black;
 }
   
 .city-info-details {
   font-size: 26px;
-  color: black;
   font-weight: bold;
   padding: 5px;
   margin: 4px;
+  color: white;
+  font-size: 30px;
+  text-shadow: 3px 3px 3px black;
 }
 
 .hide {
@@ -153,10 +155,18 @@ border-radius: 0.3rem;
     padding: 10px;
 }
 
+.footer {
+  padding: 20px;
+  background-color: #6699cc;
+  font-weight: bold;
+}
+
+
 
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
+  
   .section {
     display: flex;
     flex-wrap: wrap;
@@ -197,7 +207,7 @@ border-radius: 0.3rem;
   }
 
   .people-photos {
-    height: 159px;
+    height: 60%;
   }
 
   .city-info-heading {
@@ -217,6 +227,7 @@ border-radius: 0.3rem;
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
+
   header {
     padding-top: 0;
   }
@@ -228,6 +239,7 @@ border-radius: 0.3rem;
   .search-form {
     width: 100%;
     margin-bottom: 10px;
+    border: none;
   }
 
   .form-label {
@@ -244,13 +256,34 @@ border-radius: 0.3rem;
 
   .city-info {
     width: 100%;
+    border: none;
   }
 
   .things-to-do {
     display: block;
+    overflow: auto;
   }
 
   h2 {
     text-align: center;
   }
+
+  .footer p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header {
+    padding: 0;
+  }
+  
+  header h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    padding-left: 30px;
+  }
+
 }
